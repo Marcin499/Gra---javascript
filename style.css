@@ -1,0 +1,6 @@
+div#background {
+    width: 1200px;
+    height: 800px;
+    background-image: url('');
+    position: absolute;
+}
