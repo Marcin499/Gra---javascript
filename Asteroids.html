@@ -84,7 +84,7 @@
 
         function moveEnemies() {
             for(var i = 0 ; i < enemies.length ; i++ ) {
-                enemies[i].top = enemies[i].top + 6;
+                enemies[i].top = enemies[i].top + 4;
             }
         }
 
@@ -104,6 +104,15 @@
             }
         }
 
+        function collisionAlert() {
+           for(var enemy = 0; enemy < enemies.length; enemy++){
+               if(enemies[enemy].top > hero.top){
+                alert("Game over!!!");
+                location.reload();
+            }
+           }            
+        }
+
         function gameLoop() {
             setTimeout(gameLoop, 100)
             moveMissiles();
@@ -111,6 +120,7 @@
             moveEnemies();
             drawEnemies();
             collisionDetection();
+            collisionAlert();
         }
         
         gameLoop()
